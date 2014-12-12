@@ -1,0 +1,102 @@
+---
+title: "Data Scientist's Toolbox"
+author: "Nicola Davide D'Avanzo"
+date: "12/12/2014"
+output: html_document
+---
+
+This document is a generic overview about the data scientist's skills and attitudes.
+
+What do data scientists do?
+
+- Define the **questions of interest**
+- Define the **ideal data set**
+- Determine what **data you can access**
+- **Obtain** the data
+- **Clean** the data
+- Exploratory **data analysis**
+- **Statistical prediction/modeling**
+- **Interpret** results
+- **Challenge** results
+- **Synthesize/write up** results
+- Create **reproducible code**
+- **Distribute** results to other people
+
+Data Scientists tools:
+
+ - R (statistical programming environment)
+ - GitHub (Git repository web-based hosting service)
+ - Terminal Linux
+
+R questions:
+
+- What steps will reproduce the problem?
+- What is the expected output?
+- What do you see instead?
+- What version of the product are you using?
+- What operating system?
+
+Data analysis questions:
+
+- What is the question you are trying to answer?
+- What steps/tools did you use to answer it?
+- What did you expect to see?
+- What do you see instead?
+- What other solutions have you thought about?
+
+Data analysis files:
+
+* Data (Raw Data, Processed Data)
+* Figures (Explorator figures, Final figures)
+* R code (Raw scripts, Final scripts, R markdown files)
+* Text (Readme files, Text of analysis)
+
+Command Line Interface (CLI):
+
+* **Navigate** folders
+* **Create** file, folders and programs
+* **Edit** file, folders and programs
+* **Run** computer programs
+
+CLI commands: **command** **flags** **arguments**
+
+* pwd
+* clear
+* ls -al
+* cd
+* mkdir
+* touch
+* cp -r
+* rm -r
+* mv new_file renamed_filed
+* echo
+* date
+
+Git: open-source version control system
+
+* most popular
+* **local** repository
+* command line
+* git config - -global user.name " your_user_name "
+* git config - -global user.email " your_email@example.com "
+* git config - -list
+
+
+GitHub: web-based hosting service for software development project that use the Git revision control system
+
+* **Remote** repository (on the web)
+* Homepage repository **display**
+* **Backup**
+* **Follow** (access) and **share**
+
+Creating GitHub repository:
+
+* from **Scratch**: " create a new repo "
+* **Local copy**: 
+git init
+git remote add origin https://www.github.com/YourUsernameHere/test_repo.git
+
+* **Fork** another user's repository: "Fork"
+* **Clone the repo**:
+git clone https://www.github.com/YourUsernameHere/RepoNameHere.git
+
