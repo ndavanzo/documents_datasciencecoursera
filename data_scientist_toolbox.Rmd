@@ -2,7 +2,7 @@
 title: "Data Scientist's Toolbox"
 author: "Nicola Davide D'Avanzo"
 date: "12/12/2014"
-output: html_document
+output: word_document
 ---
 
 This document is a generic overview about the data scientist's skills and attitudes.
@@ -92,11 +92,25 @@ GitHub: web-based hosting service for software development project that use the 
 Creating GitHub repository:
 
 * from **Scratch**: " create a new repo "
-* **Local copy**: 
+* **Local copy**:
+
 git init
+
 git remote add origin https://www.github.com/YourUsernameHere/test_repo.git
 
 * **Fork** another user's repository: "Fork"
 * **Clone the repo**:
+
 git clone https://www.github.com/YourUsernameHere/RepoNameHere.git
 
+Pushing and Pulling on GitHub:
+
+* git add. (add all files to track on local repository)
+* git add -u (update file to track on local repository)
+* git add -A (both previous operations)
+* git commit -m "massage" (commit index)
+* git push (load files on remote repository)
+
+* git checkout -b branchname (create a branch)
+* git branch (to see what branch you are on type)
+* git checkout master (to switch back to the master branch type)
