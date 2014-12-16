@@ -56,12 +56,13 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <div id="header">
 <h1 class="title">Data Scientist’s Toolbox</h1>
 <h4 class="author"><em>Nicola Davide D’Avanzo</em></h4>
-<h4 class="date"><em>12/12/2014</em></h4>
+<h4 class="date"><em>16/12/2014</em></h4>
 </div>
 
 
 <p>This document is a generic overview about the data scientist’s skills and attitudes.</p>
-<p>What do data scientists do?</p>
+<div id="what-do-data-scientists-do" class="section level3">
+<h3>What do data scientists do?</h3>
 <ul>
 <li>Define the <strong>questions of interest</strong></li>
 <li>Define the <strong>ideal data set</strong></li>
@@ -76,13 +77,17 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li>Create <strong>reproducible code</strong></li>
 <li><strong>Distribute</strong> results to other people</li>
 </ul>
-<p>Data Scientists tools:</p>
+</div>
+<div id="data-scientists-tools" class="section level3">
+<h3>Data Scientists tools:</h3>
 <ul>
 <li>R (statistical programming environment)</li>
 <li>GitHub (Git repository web-based hosting service)</li>
 <li>Terminal Linux</li>
 </ul>
-<p>R questions:</p>
+</div>
+<div id="r-questions" class="section level3">
+<h3>R questions:</h3>
 <ul>
 <li>What steps will reproduce the problem?</li>
 <li>What is the expected output?</li>
@@ -90,7 +95,9 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li>What version of the product are you using?</li>
 <li>What operating system?</li>
 </ul>
-<p>Data analysis questions:</p>
+</div>
+<div id="data-analysis-questions" class="section level3">
+<h3>Data analysis questions:</h3>
 <ul>
 <li>What is the question you are trying to answer?</li>
 <li>What steps/tools did you use to answer it?</li>
@@ -98,21 +105,28 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li>What do you see instead?</li>
 <li>What other solutions have you thought about?</li>
 </ul>
-<p>Data analysis files:</p>
+</div>
+<div id="data-analysis-files" class="section level3">
+<h3>Data analysis files:</h3>
 <ul>
 <li>Data (Raw Data, Processed Data)</li>
 <li>Figures (Explorator figures, Final figures)</li>
 <li>R code (Raw scripts, Final scripts, R markdown files)</li>
 <li>Text (Readme files, Text of analysis)</li>
 </ul>
-<p>Command Line Interface (CLI):</p>
+</div>
+<div id="command-line-interface-cli" class="section level3">
+<h3>Command Line Interface (CLI):</h3>
 <ul>
 <li><strong>Navigate</strong> folders</li>
 <li><strong>Create</strong> file, folders and programs</li>
 <li><strong>Edit</strong> file, folders and programs</li>
 <li><strong>Run</strong> computer programs</li>
 </ul>
-<p>CLI commands: <strong>command</strong> <strong>flags</strong> <strong>arguments</strong></p>
+</div>
+<div id="cli-commands" class="section level3">
+<h3>CLI commands:</h3>
+<p><strong>command</strong> <strong>flags</strong> <strong>arguments</strong></p>
 <ul>
 <li>pwd</li>
 <li>clear</li>
@@ -126,7 +140,10 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li>echo</li>
 <li>date</li>
 </ul>
-<p>Git: open-source version control system</p>
+</div>
+<div id="git" class="section level3">
+<h3>Git:</h3>
+<p>open-source version control system</p>
 <ul>
 <li>most popular</li>
 <li><strong>local</strong> repository</li>
@@ -135,14 +152,19 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li>git config - -global user.email &quot; <a href="mailto:your_email@example.com">your_email@example.com</a> &quot;</li>
 <li>git config - -list</li>
 </ul>
-<p>GitHub: web-based hosting service for software development project that use the Git revision control system</p>
+</div>
+<div id="github" class="section level3">
+<h3>GitHub:</h3>
+<p>web-based hosting service for software development project that use the Git revision control system</p>
 <ul>
 <li><strong>Remote</strong> repository (on the web)</li>
 <li>Homepage repository <strong>display</strong></li>
 <li><strong>Backup</strong></li>
 <li><strong>Follow</strong> (access) and <strong>share</strong></li>
 </ul>
-<p>Creating GitHub repository:</p>
+</div>
+<div id="creating-github-repository" class="section level3">
+<h3>Creating GitHub repository:</h3>
 <ul>
 <li>from <strong>Scratch</strong>: &quot; create a new repo &quot;</li>
 <li><strong>Local copy</strong>:</li>
@@ -154,17 +176,121 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li><strong>Clone the repo</strong>:</li>
 </ul>
 <p>git clone <a href="https://www.github.com/YourUsernameHere/RepoNameHere.git">https://www.github.com/YourUsernameHere/RepoNameHere.git</a></p>
-<p>Pushing and Pulling on GitHub:</p>
+</div>
+<div id="pushing-and-pulling-on-github" class="section level3">
+<h3>Pushing and Pulling on GitHub:</h3>
 <ul>
-<li>git add. (add all files to track on local repository)</li>
+<li>git add . (add all files to track on local repository)</li>
 <li>git add -u (update file to track on local repository)</li>
 <li>git add -A (both previous operations)</li>
 <li>git commit -m “massage” (commit index)</li>
-<li><p>git push (load files on remote repository)</p></li>
+<li><p>git push -u origin master (load files on remote repository in origin branch master)</p></li>
 <li>git checkout -b branchname (create a branch)</li>
 <li>git branch (to see what branch you are on type)</li>
 <li><p>git checkout master (to switch back to the master branch type)</p></li>
 </ul>
+</div>
+<div id="types-of-data-science-questions" class="section level3">
+<h3>Types of Data Science questions:</h3>
+<ul>
+<li>Descriptive</li>
+<li>Exploratory</li>
+<li>Inferential</li>
+<li>Predictive</li>
+<li>Causal</li>
+<li>Mechanistic</li>
+</ul>
+</div>
+<div id="descriptive-analysis" class="section level3">
+<h3>Descriptive Analysis:</h3>
+<p>describe a set of data.</p>
+<ul>
+<li>The first kind of data analysis performed</li>
+<li>Commonly applied to census data</li>
+<li>The description and interpretation are different steps</li>
+<li>Description can usually not be generalized without additional statistical modeling</li>
+<li>Numerical descriptors are mean and standard deviation for continuous data types</li>
+<li>Frequency and percentage are more useful and used while describing categorical data</li>
+</ul>
+</div>
+<div id="exploratory-analysis" class="section level3">
+<h3>Exploratory analysis:</h3>
+<p>find relationships you didn’t know about.</p>
+<ul>
+<li>Exploratoty models ar good for discovering new connections</li>
+<li>They are also useful to describe future studies</li>
+<li>Exploratory analyses are usually not the final say</li>
+<li>Exploratory analyses alone should not be used for generalizing/predicting</li>
+<li>Correlation does not imply causation</li>
+</ul>
+</div>
+<div id="inferential-analysis" class="section level3">
+<h3>Inferential analysis:</h3>
+<p>use a relatively small sample of data to say something (draw inferences) about a bigger population.</p>
+<ul>
+<li>Inference is commonly the goal of statistical models</li>
+<li>Inference involves estimating both the quantity you care about and your uncertainty about your estimate</li>
+<li>Inference depends heavily on both the population and the sampling scheme</li>
+</ul>
+</div>
+<div id="predictive-analysis" class="section level3">
+<h3>Predictive analysis:</h3>
+<p>use the data on some objects to predict values for another object.</p>
+<ul>
+<li>If X predict Y it does not mean that X causes Y</li>
+<li>Accurate prediction depends heavily on measuring the right variables</li>
+<li>Although there are better and worse prediction models, more data and a simple model works really well</li>
+<li>Prediction is very hard, especially about the future references</li>
+</ul>
+</div>
+<div id="causal-analysis" class="section level3">
+<h3>Causal analysis:</h3>
+<p>find out what happens to one variable when you make another variable change.</p>
+<ul>
+<li>Usually randomized studies are required to identify causation</li>
+<li>There are approaches to inferring causation in non-randomized studies, but they are complicated and sensitive of assumptions</li>
+<li>Causal relationships are usually identified as average effects, but may not apply to every individual</li>
+<li>Causal model are usually the “gold standard” for data analysis</li>
+</ul>
+</div>
+<div id="mechanistic-analysis" class="section level3">
+<h3>Mechanistic analysis:</h3>
+<p>understand the exact changes in variables that lead to changes in other varibales for individual objects.</p>
+<ul>
+<li>Incredible hard to infer, except in simple situation</li>
+<li>Usually modeled by a deterministic set of equations (physical/engineering science)</li>
+<li>Generally the random component of the data is the measuremet error</li>
+<li>If the equations are note but the parameters are not, they can be inferred with data analysis</li>
+</ul>
+</div>
+<div id="data" class="section level3">
+<h3>Data:</h3>
+<p>values of quantitative or qualitative variables, belonging to a set of items.</p>
+<ul>
+<li>Set of items: population</li>
+<li>Variables: measuremet or characteristic of an item</li>
+<li>The most important thing in Data Science is the question</li>
+<li>The second most important thing is the data</li>
+<li>Often the data limit or enable the questions</li>
+<li>But having data can’t save you if you don’t have the question</li>
+</ul>
+</div>
+<div id="analysis-plan" class="section level3">
+<h3>Analysis plan</h3>
+<ul>
+<li>Insert statistical method</li>
+<li>Plan for data and code sharing</li>
+<li>Formulate your question in advance</li>
+</ul>
+</div>
+<div id="beware" class="section level3">
+<h3>Beware</h3>
+<ul>
+<li>Prediction is not inference</li>
+<li>Correlation is not causation</li>
+<li>Data dredging</li>
+</ul>
+</div>
 
 
 </div>
