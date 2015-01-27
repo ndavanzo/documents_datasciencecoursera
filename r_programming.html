@@ -10,7 +10,7 @@
 
 <meta name="author" content="Nicola Davide D’Avanzo" />
 
-<meta name="date" content="2015-09-01" />
+<meta name="date" content="2015-12-01" />
 
 <title>R_Programming</title>
 
@@ -56,7 +56,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <div id="header">
 <h1 class="title">R_Programming</h1>
 <h4 class="author"><em>Nicola Davide D’Avanzo</em></h4>
-<h4 class="date"><em>09/01/2015</em></h4>
+<h4 class="date"><em>27/01/2015</em></h4>
 </div>
 
 
@@ -172,6 +172,180 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li><em>gzfile</em>, opens a connection to a file compressed in gzip;</li>
 <li><em>bzfile</em>, opens a connection to a file compressed in bzip2;</li>
 <li><em>url</em>, opens a connection to a webpage.</li>
+</ul>
+<p><strong>Programming with R</strong></p>
+<p>Control Structures:</p>
+<ul>
+<li><em>if</em>,<em>else</em>: testing a condition;</li>
+<li><em>for</em>: execute a loop a fixed number of times (most commonly used for iteration over the elements of an object);</li>
+<li><em>while</em>: execute a loop while a condition (or more than one) is true;</li>
+<li><em>repeat</em>: execute an infinite loop;</li>
+<li><em>break</em>: break the execution af a loop;</li>
+<li><em>next</em>: skip an iteraction of a loop;</li>
+<li><em>return</em>: exit a function.</li>
+</ul>
+<p>Infinite loops should be generally avoid, even if they are theoretically correct.</p>
+<p>Functions:</p>
+<ul>
+<li>Functions are created using the <em>function()</em> directive and are stored as “first class objects”, i.e. they must be trated much like any other R object.</li>
+<li>Functions can be passed as arguments to other functions.</li>
+<li>Functions can be nested, so that you can define a function inside another function.</li>
+<li>The return value of a function is the last expression in the function body to be evaluated.</li>
+</ul>
+<p>Function arguments:</p>
+<ul>
+<li>formal arguments are those arguments included in the function definition;</li>
+<li>the <em>formals</em> function returns a list of all the arguments of a function;</li>
+<li>Function arguments can be missing or might have default values;</li>
+<li>R functions arguments can be matched positionally or by name.</li>
+<li>When an argument is matched by name, it is “taken out” of the argument list.</li>
+</ul>
+<p>The order of operations when given an argument is:</p>
+<ul>
+<li>check for exact match for a named argument;</li>
+<li>check for a partial match;</li>
+<li>check for a positional match.</li>
+</ul>
+<p>Lazy evaluation: arguments to functions are evaluated only lazily, so they are evaluated only as needed.</p>
+<p>The “…” argument:</p>
+<ul>
+<li>indicate a variable number of arguments that are usually passed on to other functions;</li>
+<li>is often used when extending another function and you don’t want to copy the entire argument list of the original function;</li>
+<li>is also necessary when the number of arguments passed to the function cannot be known in advance;</li>
+<li>any arguments that apppear after … on the argument list must be named explicitly and cannot be partially matched.</li>
+</ul>
+<p>Binding values to symbols:</p>
+<p>When R tries to bind a value to a symbol, it searches through a series of environments to find the appropriate value. The order is:</p>
+<ol style="list-style-type: decimal">
+<li>Search the global environment for a symbol name matching the one requested;</li>
+<li>Search the namespaces of each of the packages of the <em>search()</em> list.</li>
+</ol>
+<ul>
+<li>The global environment is always the first element of the search;</li>
+<li>The order of the packages on the search list matters;</li>
+<li>When a userload a package with <em>library()</em>, the namespace of the package gets put in position 2 of the search list;</li>
+<li>R has separate namespace for fnctions and non-functions.</li>
+</ul>
+<p>Environment:</p>
+<ul>
+<li>An environment is a collection of (symbols,value) pairs;</li>
+<li>Every environment ha a parent environment;</li>
+<li>The only environment without a parent is the empty environment;</li>
+<li>A function + an environment= a closure or function closure.</li>
+</ul>
+<p>Scoping rules:</p>
+<ul>
+<li>The scoping rules detemine how a value is associated with a free variable in a function (free variable are not formal arguments and are not assigned insided the funciton body);</li>
+<li>R uses lexical scoping or static scoping. A common alternative is dynamic scoping;</li>
+<li>Related to the scoping rules is how R uses the search list to bind a value to a symbol.</li>
+</ul>
+<p>Lexical scoping:</p>
+<ul>
+<li>If the value of the symbol is not found in the environment in which a function was defined, the search is continued in the parent environment;</li>
+<li>The search continues down the sequence of parent environments until we hit the top-level environment;</li>
+<li>After the top-level environment the search continues down the search list until we hit the empty environment.</li>
+<li>If a value for a given symbol cannot be found once the empty environment is arrived at, the an error is thrown.</li>
+<li>In R you can defined functions inside other functions: in this case the environment in which a function is defined is the body of another function;</li>
+</ul>
+<p>Lexical vs Dynamic scoping:</p>
+<ul>
+<li>With lexical scoping the value of a symbol is looked up in the environment in which the function is defined;</li>
+<li>With dynamic scoping the value of a symbol is looked up in the environment from whic the function was called.</li>
+</ul>
+<p>Coding standards for R:</p>
+<ul>
+<li>Always use text files/text editor;</li>
+<li>Indent your code (4 spaces at minimum, 8 spaces ideal);</li>
+<li>Limit the width of your code (line length fixed to 80 columns prevents lots of nesting and very long functions);</li>
+<li>Limit the length of individual functions.</li>
+</ul>
+<p>Dates and times in R:</p>
+<ul>
+<li>Dates are respresented by the Date class and can be coerced from a character string using the <em>as.Date()</em> function;</li>
+<li>Times are represented by the POSIXct or POSIXlt class;</li>
+<li>POSIXct is just a very large integer under the hood;</li>
+<li>POSIXlt is a list underneath and it stores other important information like the day of the week, day of the year, month, day of the month;</li>
+<li>There are a number of generic functions that operate with times in R like weekdays, months, quarters.</li>
+<li>Times can be coerced from a character string using <em>as.POSIXct</em> or <em>as.POSIXlt</em> function;</li>
+<li><em>strptime</em> function is useful when the date is written in a different format from “year-month-day hours:minuts:seconds”</li>
+<li>You can use mathematical operation on dates and times of the same format</li>
+</ul>
+<p><strong>Loop Functions and Debugging</strong></p>
+<p>There are some functions which implement loop to make life easier.</p>
+<ul>
+<li><p><em>lapply</em>: loop over a list and evaluate function on each element. It takes a list and a function as inputs and always returns a list. Lapply and friends make heavy use of anonymous functions.</p></li>
+<li><p><em>supply</em>: same as lapply but try to simplify the result. If the result is a list where every element is length 1, then a vector is returned; if the result is a list where every element is a vector of the same length (&gt;1) then a matrix is returned; if it can’t figure things out, a list id returned.</p></li>
+<li><p><em>apply</em>: apply a function over the margins of an array. It is most often used to apply a function to the rows or columns of a matrix.</p></li>
+<li><p><em>tapply</em>: apply a function over subsets of a vector. It takes a vector and a list of factors as inputs.</p></li>
+<li><p><em>mapply</em>: multivariate version of lapply. It applies a function in parallel over a set of arguments.</p></li>
+<li><p><em>split</em>: take a vector or other objects and splits it into groups determined by factor or list of factors.</p></li>
+</ul>
+<p>Indications that something is not right:</p>
+<ul>
+<li><p><em>message</em>: a generic notification/diagnostic message produced by the <em>message</em> function; execution of the function continues.</p></li>
+<li><p><em>warning</em>: an indication that something is wrong but not necessarily fatal; execution of the function continues; generated by the <em>warning</em> function.</p></li>
+<li><p><em>error</em>: an indication that a fatal problem has occurred; execution stops; produced by the <em>stop</em> function.</p></li>
+<li><p><em>condition</em>: a generic concept for indicating that something unexpected can occur; programmers can create their own conditions.</p></li>
+</ul>
+<p>How do you know that something is wrong with your function?</p>
+<ul>
+<li>What was your input? How did you call the function?</li>
+<li>What were you expecting? Output, messages, other results?</li>
+<li>What did you get?</li>
+<li>How does what you get differ from what you were expecting?</li>
+<li>Were ypur expectations correct in the first place?</li>
+<li>Can you reproduce the problem (exactly)?</li>
+</ul>
+<p>Debugging tools in R:</p>
+<ul>
+<li><p><em>traceback</em>: prints out the sequence of calls (in a function) that lead to an error; does nothing if there’s no error.</p></li>
+<li><p><em>debug</em>: flag a function for “debug” which allow you to step through execution of a function one line at a time.</p></li>
+<li><p><em>browser</em>: suspends the execution of a function wherever it is called and puts the function in debug mode.</p></li>
+<li><p><em>trace</em>: allows you to insert debugging code at chosen places in any function.</p></li>
+<li><p><em>recover</em>: allows you to modify the error behavior so that you can browse the function call stack</p></li>
+</ul>
+<p><strong>Simulation in R</strong></p>
+<p>Probability distribution functions usually have four functions associated with them. The functions are prefixed with a</p>
+<ul>
+<li>d for density</li>
+<li>r for random numbe generation</li>
+<li>p for cumulative distribution</li>
+<li><p>q for quantile function.</p></li>
+<li>Drawing samples from specific probability distributions can be done with r* functions</li>
+<li>Standard distribution are built in: Normal, Poisson, Binomial, Exponential, Gamma, etc…</li>
+<li>The cumulative distribution for a standard Normal distribution is the inverse of the probability distribution.</li>
+<li>Always set the random number seed by <em>set.seed()</em> when conducting a simulation</li>
+<li><p>The sample function draws randomly from a specified set of (scalar) objects allowing you to sample from arbitrary distributions.</p></li>
+</ul>
+<p><strong>Profiling R code</strong></p>
+<ul>
+<li>Profiling is a systematic way to examine how much time is spent in different parts of a program</li>
+<li>Useful when trying to optimize your code</li>
+<li>Getting biggest impact on speeding up code depends on knowing where the code spends most of its time: this cannot be done without performance analysis or profiling.ù</li>
+<li>Genaral principle of optimization: design first, then optimize.</li>
+</ul>
+<p><em>system.time()</em></p>
+<ul>
+<li>takes an arbitrary R expression as input and return the amount of time (in seconds) taken to evaluate the expression.</li>
+<li>If there is an error, gives time until the error occurred.</li>
+<li>Returns an object of class <em>proc_time</em> with <em>user time</em> and <em>elapsed time</em></li>
+<li><em>user time</em>: time charged to the CPU(s) for this expression</li>
+<li><em>elapsed time</em>: “wall clock” time</li>
+<li>Usually, the <em>user time</em> and <em>elapsed time</em> are relatively close, for straight computing tasks</li>
+<li><em>elapsed time</em> may be greater than <em>user time</em> if the CPU spends a lot of time waiting around</li>
+<li><em>elapsed time</em> may be smaller than the <em>user time</em> if your machine has multiple cores/processors and is capable of using them</li>
+<li>Using <em>system.time()</em> allows you to test certain functions or code blocks to see if they are taking excessive amounts of time</li>
+</ul>
+<p>R Profiler</p>
+<ul>
+<li>The <em>Rprof()</em> function starts the profiler in R</li>
+<li>The <em>summaryRprof()</em> function summarizes the output from <em>Rprof()</em></li>
+<li><em>Rprof()</em> keeps track of the function call stack at regularly sampled intervals and tabulates how much time is spent in each function</li>
+<li>The <em>summaryRprof()</em> function tabulates the R profiler output and calculates how much time is spent in which function</li>
+<li>There are two methods for normalizing the data: <em>by.total</em> and <em>by.self</em></li>
+<li><em>by.total</em> divides the time spent in each function by the total run time</li>
+<li><em>by.self</em> does the sime but first subtracts out time spent in functions above in the call stack</li>
+<li>C and Fortran code called by R is not profiled</li>
 </ul>
 
 
