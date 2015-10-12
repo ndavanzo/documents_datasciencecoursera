@@ -113,6 +113,7 @@ git clone https://www.github.com/YourUsernameHere/RepoNameHere.git
 * git add -A (both previous operations)
 * git commit -m "massage" (commit index)
 * git push -u origin master (load files on remote repository in origin branch master)
+* git pull -u origin master
 
 * git checkout -b branchname (create a branch)
 * git branch (to see what branch you are on type)
